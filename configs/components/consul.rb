@@ -19,12 +19,9 @@ component 'consul' do |pkg, settings, platform|
 
   pkg.install do
     [
-      "pwd",
-      "ls",
       "mkdir -p #{settings[:prefix]}",
       "mkdir -p #{settings[:bindir]}",
       "cp -pr ../consul #{settings[:bindir]}"
-
     ]
   end
 
