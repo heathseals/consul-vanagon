@@ -1,8 +1,10 @@
-Clean up pathing
-Make symlinks
-Add UI
+x Make symlinks
+x Add UI
+x turn in patch for zip ext
+
+add my configs
 Add in systemd
+fix tar bug
+add consul user
 Build for arm
 build for Debian
-add my configs
-turn in patch for zip ext

@@ -7,6 +7,8 @@ project "consul" do |proj|
   proj.setting(:logdir, File.join(proj.prefix, "var", "log"))
   proj.setting(:bindir, File.join(proj.prefix, "bin"))
   proj.setting(:link_bindir, File.join("/usr", "local", "bin"))
+  proj.setting(:link_sysconfdir, File.join("/etc" ))
+  proj.setting(:link_logdir, File.join("/var", "log"))
   proj.setting(:tmpfilesdir, "/usr/lib/tmpfiles.d")
 
   platform = proj.get_platform
@@ -20,11 +22,13 @@ project "consul" do |proj|
   proj.target_repo ""
 
   proj.component "consul"
-#  proj.component "ui"
+  proj.component "web_ui"
 #  proj.component "tools"
 
   proj.directory proj.prefix
-  proj.directory proj.sysconfdir
-  proj.directory proj.logdir
   proj.directory proj.link_bindir
+#  proj.directory proj.link_sysconfdir
+#  proj.directory proj.link_logdir
+  #
+  proj.user "consul", group:"consul", is_system:true, homedir:"/opt/consul/share"
 end

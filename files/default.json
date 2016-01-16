@@ -1,0 +1,16 @@
+{
+    "advertise_addr": "0.0.0.0",
+    "bind_addr": "0.0.0.0",
+    "client_addr": "0.0.0.0",
+    "data_dir": "/opt/consul/lib",
+    "enable_debug": true,
+    "leave_on_terminate": false,
+    "log_level": "DEBUG",
+    "node_name": "<node>",
+    "recursor": "8.8.8.8",
+    "rejoin_after_leave": true,
+    "retry_join": [
+        "<nodes>"
+    ],
+    "ui_dir": "/opt/consul/share/ui"
+}
