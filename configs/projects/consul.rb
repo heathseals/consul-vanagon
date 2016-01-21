@@ -6,6 +6,7 @@ project "consul" do |proj|
 
   proj.setting(:logdir, File.join(proj.prefix, "var", "log"))
   proj.setting(:bindir, File.join(proj.prefix, "bin"))
+  proj.setting(:libdir, File.join(proj.prefix, "lib"))
   proj.setting(:link_bindir, File.join("/usr", "local", "bin"))
   proj.setting(:link_sysconfdir, File.join("/etc" ))
   proj.setting(:link_logdir, File.join("/var", "log"))
@@ -25,10 +26,10 @@ project "consul" do |proj|
   proj.component "web_ui"
 #  proj.component "tools"
 
-  proj.directory proj.prefix
-  proj.directory proj.link_bindir
+  proj.directory proj.prefix, owner: "consul", group: "consul"
+  proj.directory proj.link_bindir, owner: "consul", group: "consul"
 #  proj.directory proj.link_sysconfdir
 #  proj.directory proj.link_logdir
   #
-  proj.user "consul", group:"consul", is_system:true, homedir:"/opt/consul/share"
+  proj.user "consul", group:"consul", is_system:true, homedir:"/opt/consul/share", shell:"/bin/bash"
 end
