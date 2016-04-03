@@ -3,7 +3,7 @@ platform "el-7-x86_64" do |plat|
   plat.defaultdir "/etc/sysconfig"
   plat.servicetype "systemd"
 
-  plat.provision_with "yum install --assumeyes rsync gcc make rpmdevtools rpm-libs yum-utils rpm-sign unzip"
+  plat.provision_with "yum install --assumeyes rsync gcc make rpmdevtools rpm-libs yum-utils rpm-sign unzip make"
   plat.install_build_dependencies_with "yum install --assumeyes"
   plat.vmpooler_template "centos-7-x86_64"
 end
